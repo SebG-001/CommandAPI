@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommandAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,6 +11,10 @@ using Microsoft.Extensions.Hosting;
 
 namespace CommandAPI
 {
+    // This class initializes the environment and/or services
+    // eg. services.AddControllers(); adds the Commands controller that processes HTTP requests
+    // also services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
+    // that associates the contract (interface or class) with a class that implements it
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -17,6 +22,7 @@ namespace CommandAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
