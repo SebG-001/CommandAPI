@@ -9,6 +9,10 @@ namespace CommandAPI.Data
     // This is an interface contract for the user of our API
     // that is, the user will know what interface methods/properties 
     // are available to them
+    // This describes the repository interface that will be used to 
+    // access and modify the database
+    // It is formalized as an interface so as to lock the contract between
+    // the API and User
     public interface ICommandAPIRepo
     {
         bool SaveChanges();

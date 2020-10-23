@@ -7,7 +7,8 @@ using System.ComponentModel.DataAnnotations;
 namespace CommandAPI.Models
 {
     // This is a class that represents the data to be accessed/stored
-    // from/in a database or elsewhere
+    // from/in a database or elsewhere. 
+    // This Models the data
     public class Command
     {
         [Key]

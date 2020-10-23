@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommandAPI
 {
@@ -17,12 +19,24 @@ namespace CommandAPI
     // that associates the contract (interface or class) with a class that implements it
     public class Startup
     {
+        // IConfiguration gives access to Configuration API that is stored in appsettings.json 
+        // and other places to be able to determine/use the connection string
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // get connection string from json file
+            services.AddDbContext<CommandContext>(
+                opt => opt.UseNpgsql(Configuration.GetConnectionString("PostgreSqlConnection")));
             services.AddControllers();
-            services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
+            //services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
+            services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
