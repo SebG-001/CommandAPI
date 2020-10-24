@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartupObject>CommandAPI.Program</StartupObject>
+    <UserSecretsId>e722640b-8a11-47ff-9b82-801a7997da00</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
