@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandAPI", "src\CommandAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D790E2A5-BB0D-4B4C-938F-E4B89B2EC259}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandAPI.Tests", "test\CommandAPI.tests\CommandAPI.Tests.csproj", "{67D3A7D2-31F8-4BEF-9FCB-960007EB6631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandAPI.Tests", "test\CommandAPI.Tests\CommandAPI.Tests.csproj", "{67D3A7D2-31F8-4BEF-9FCB-960007EB6631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
