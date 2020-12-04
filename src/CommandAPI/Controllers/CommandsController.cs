@@ -16,6 +16,8 @@ namespace CommandAPI.Controllers
     // This class is a controller that will process HTTP requests
     // and preform the neccessary actions to create a responce
 
+    // Inserting comment to trigger an AzureDevOps Test Run
+
     [Route("api/[controller]")]
     [ApiController]
     public class CommandsController : ControllerBase
