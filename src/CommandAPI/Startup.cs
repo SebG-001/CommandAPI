@@ -52,12 +52,13 @@ namespace CommandAPI
             services.AddControllers().AddNewtonsoftJson(s => {
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); });
 
-                       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CommandContext context)
         {
+            context.Database.Migrate(); // Mirgate database
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
